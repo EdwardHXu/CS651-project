@@ -3,6 +3,8 @@ package agent;
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Block implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -73,8 +75,10 @@ public class Block implements Serializable {
         return index;
     }
 
-    public long getTimestamp() {
-        return timestamp;
+    public String getTimestamp() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        Date time = new Date(timestamp);
+        return sdf.format(time);
     }
 
     public String getHash() {

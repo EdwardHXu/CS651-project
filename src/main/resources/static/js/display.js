@@ -41,10 +41,10 @@ function displayAgent(jsonAgent) {
     var idx = 0;
     var table = document.getElementById(OUTPUT_TABLE_NAME);
     var row = table.insertRow(table.length);
-    const nameCell = row.insertCell(idx++);
-    nameCell.title = agent.name;
-    nameCell.innerHTML = agent.name;
-    row.insertCell(idx++).innerHTML = agent.port;
+    // const nameCell = row.insertCell(idx++);
+    // nameCell.title = agent.name;
+    // nameCell.innerHTML = agent.name;
+    // row.insertCell(idx++).innerHTML = agent.port;
     const chain = agent.blockchain;
     const blockchainCell = row.insertCell(idx++);
     for (var i in chain) {
@@ -92,8 +92,7 @@ function getBlockString(block) {
 function createBlockP(block) {
     var p = document.createElement("P");
     p.title = "creator " + block.creator;
-    p.innerHTML = "index=" + block.index + " creator=" + block.creator + " timestamp="
-        + block.timestamp + " message=" + block.message;
+    p.innerHTML = block.timestamp + "   " + block.creator + ": " + block.message + "<br>";
     console.log("create p.innerHTML" + p.innerHTML);
     return p;
 }
@@ -103,8 +102,6 @@ function cleanTable(name) {
     table.innerHTML = "";
     var row = table.insertRow(0);
     var idx = 0;
-    row.insertCell(idx++).innerHTML = "Agent name";
-    row.insertCell(idx++).innerHTML = "Port";
-    row.insertCell(idx++).innerHTML = "Blockchain";
+    row.insertCell(idx++).innerHTML = "Chatting Room";
     row.insertCell(idx).innerHTML = "Operations";
 }

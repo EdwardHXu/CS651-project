@@ -32,13 +32,13 @@ button.cellButton {
 }
 
 p.agent {
-    font-size: 16px;
+    font-size: 18px;
     font-family: Arial, serif;
     font-weight: bold;
 }
 
 p.msg {
-    font-size: 12px;
+    font-size: 16px;
     font-style: italic;
     font-family: Arial, serif;
 }
@@ -87,5 +87,5 @@ td, th {
 }
 
 td.blockchain {
-    font-size: 12px;
+    font-size: 16px;
 }
