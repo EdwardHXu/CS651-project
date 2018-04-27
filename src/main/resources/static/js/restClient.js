@@ -17,7 +17,9 @@ function deleteAllAgents() {
 
 function createAgent() {
     var idx = getNextCount();
-    var name = "Agent" + idx;
+    var platformName = navigator.platform;
+    var name = prompt("Please input your name.", platformName);
+    // var name = "Agent" + idx;
     var port = 3000 + idx;
     sendHttpRequest("POST", "agent?name=" + name + "&port=" + port, null, displayAgent);
 

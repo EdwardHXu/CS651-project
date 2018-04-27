@@ -19,9 +19,10 @@ function displayAllAgents(json) {
         displayMsg("Invalid response from server " + json, "red");
         return;
     }
+    // displayAgent(agents[0]);
     for (var i in agents) {
-        displayAgent(agents[i]);
-    }
+    displayAgent(agents[i]);
+}
 }
 
 function displayAgent(jsonAgent) {
