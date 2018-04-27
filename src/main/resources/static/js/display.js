@@ -52,7 +52,7 @@ function displayAgent(jsonAgent) {
     }
     blockchainCell.className = "blockchain";
     var p = document.createElement("P");
-    p.appendChild(addCellButton("Mine", function () {
+    p.appendChild(addCellButton("Chat", function () {
         mine(agent.name);
     }));
     p.appendChild(addCellButton("Delete", function () {

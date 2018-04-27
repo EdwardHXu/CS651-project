@@ -45,7 +45,7 @@ public class AgentController {
     }
 
     @RequestMapping(method = POST, path = "mine")
-    public Block createBlock(@RequestParam(value = "agent") final String name, final String message) {
+    public Block createBlock(@RequestParam(value = "agent") final String name, @RequestParam(value = "message") final String message) {
         return agentManager.createBlock(name, message);
     }
 }

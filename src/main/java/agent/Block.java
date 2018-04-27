@@ -85,11 +85,11 @@ public class Block implements Serializable {
         return previousHash;
     }
 
-    public String getContent() {
+    public String getMessage() {
         return message;
     }
 
-    public void setContent(String message){
+    public void setMessage(String message){
         this.message = message;
     }
 
