@@ -1,9 +1,27 @@
 <!doctype html>
 <html>
 <head>
+
     <title>Block Chain Console</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+<script src="js/display.js"></script>
+<script src="js/restClient.js"></script>
+<script type="text/javascript">
+
+    var name=prompt("Name your agent","New User")
+    if (name!=null && name!="")
+    {
+        document.write("Hello " + name)
+    }
+    var idx = getNextCount();
+    var platformName = navigator.platform;
+    var port = 3000 + idx;
+    sendHttpRequest("POST", "agent?name=" + name + "&port=" + port, null, displayAgent);
+    if (testMode) {
+        displayAgent('{"name":"Agent1","port":1001,"blockchain":[{"index":2,"creator":"Agent1","timestamp":1502193341671,"hash":"4f99b67b06b6831886815ffe66a55be2e34dcefdfc16b6214710313062a8a480","previousHash":"ROOT_HASH"}]}');
+    }
+</script>
 
 <body onload="getAllAgents()">
 <script src="js/display.js"></script>
@@ -15,12 +33,12 @@
     <button type="button" class="button" id="addAgent" onclick="createAgent()">New Agent</button>
     <button type="button" id="getAll" onclick="getAllAgents()" class="button">Refresh All</button>
     <button type="button" class="button" id="delAllAgent" onclick="deleteAllAgents()">Delete All Agents</button>
-</p>
+</p >
 
 <hr>
 <p id="msg" class="msg">
     Empty.
-</p>
+</p >
 
 <table id="output">
 </table>
