@@ -12,6 +12,7 @@ public class Block implements Serializable {
     private String hash;
     private String previousHash;
     private String creator;
+    private String message;
 
     // for jackson
     public Block() {
@@ -23,8 +24,9 @@ public class Block implements Serializable {
                 "index=" + index +
                 ", timestamp=" + timestamp +
                 ", creator=" + creator +
-//                ", hash='" + hash + '\'' +
-//                ", previousHash='" + previousHash + '\'' +
+                ", hash='" + hash + '\'' +
+                ", previousHash='" + previousHash + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 
@@ -54,10 +56,11 @@ public class Block implements Serializable {
         return result;
     }
 
-    public Block(int index, String preHash, String creator) {
+    public Block(int index, String preHash, String creator, String message) {
         this.index = index;
         this.previousHash = preHash;
         this.creator = creator;
+        this.message = message;
         timestamp = System.currentTimeMillis();
         hash = calculateHash(String.valueOf(index) + previousHash + String.valueOf(timestamp));
     }
@@ -80,6 +83,14 @@ public class Block implements Serializable {
 
     public String getPreviousHash() {
         return previousHash;
+    }
+
+    public String getContent() {
+        return message;
+    }
+
+    public void setContent(String message){
+        this.message = message;
     }
 
     private String calculateHash(String text) {

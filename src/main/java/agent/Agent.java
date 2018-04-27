@@ -58,7 +58,7 @@ public class Agent {
         return blockchain;
     }
 
-    Block createBlock() {
+    Block createBlock(String message) {
         if (blockchain.isEmpty()) {
             return null;
         }
@@ -69,7 +69,7 @@ public class Agent {
         }
 
         final int index = previousBlock.getIndex() + 1;
-        final Block block = new Block(index, previousBlock.getHash(), name);
+        final Block block = new Block(index, previousBlock.getHash(), name, message);
         System.out.println(String.format("%s created new block %s", name, block.toString()));
         broadcast(INFO_NEW_BLOCK, block);
         return block;

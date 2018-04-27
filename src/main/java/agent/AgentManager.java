@@ -6,7 +6,7 @@ import java.util.List;
 public class AgentManager {
 
     private List<Agent> agents = new ArrayList<>();
-    private static final Block root = new Block(0, "ROOT_HASH", "ROOT");
+    private static final Block root = new Block(0, "ROOT_HASH", "ROOT", null);
 
     public Agent addAgent(String name, int port) {
         Agent a = new Agent(name, "localhost", port, root, agents);
@@ -51,10 +51,10 @@ public class AgentManager {
         agents.clear();
     }
 
-    public Block createBlock(final String name) {
+    public Block createBlock(final String name, final String message) {
         final Agent agent = getAgent(name);
         if (agent != null) {
-            return agent.createBlock();
+            return agent.createBlock(message);
         }
         return null;
     }

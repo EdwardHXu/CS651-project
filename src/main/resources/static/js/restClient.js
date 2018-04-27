@@ -37,8 +37,8 @@ function getAgent() {
     sendHttpRequest("GET", "agent?name=" + name, null, null);
 }
 
-function mine(name) {
-    sendHttpRequest("POST", "agent/mine?agent=" + name, null, getAllAgents);
+function mine(name, message) {
+    sendHttpRequest("POST", "agent/mine?agent=" + name, message, getAllAgents);
 
     if (testMode) {
         displayBlock('{"index":1,"creator":"Agent1","timestamp":1502194172250,"hash":"2461f27f811df15a969391c70f136869a282224e8cc6fe8b628d16a499515d21","previousHash":"4f99b67b06b6831886815ffe66a55be2e34dcefdfc16b6214710313062a8a480"}');
