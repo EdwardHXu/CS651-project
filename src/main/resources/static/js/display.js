@@ -21,9 +21,8 @@ function displayAllAgents(json) {
     }
     // displayAgent(agents[0]);
     for (var i in agents)
-        if (agents[i].name == name)
+        if (agents[i].name === name)
             displayAgent(agents[i]);
-
 }
 
 function displayAgent(jsonAgent) {
@@ -92,6 +91,10 @@ function getBlockString(block) {
 
 function createBlockP(block) {
     var p = document.createElement("P");
+    if (block.creator === name)
+        p.style.color = "green";
+    else
+        p.style.color = "black";
     p.title = "creator " + block.creator;
     p.innerHTML = block.timestamp + "   " + block.creator + ": " + block.message + "<br>";
     console.log("create p.innerHTML" + p.innerHTML);
