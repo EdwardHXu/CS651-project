@@ -7,11 +7,11 @@
 </head>
 <script src="js/display.js"></script>
 <script src="js/restClient.js"></script>
-<script type="text/javascript">
 
+<h2>
+<script type="text/javascript">
     var name=prompt("Name your agent","New User")
-    if (name!=null && name!="")
-    {
+    if (name!==null && name!=="") {
         document.write("Hello " + name)
     }
     var idx = getNextCount();
@@ -22,11 +22,12 @@
         displayAgent('{"name":"Agent1","port":1001,"blockchain":[{"index":2,"creator":"Agent1","timestamp":1502193341671,"hash":"4f99b67b06b6831886815ffe66a55be2e34dcefdfc16b6214710313062a8a480","previousHash":"ROOT_HASH"}]}');
     }
 </script>
+</h2>
 
 <body onload="getAllAgents()">
 <script src="js/display.js"></script>
 <script src="js/restClient.js"></script>
-<h1>Block Chain Demo</h1>
+<h1>Block Chain Chat Room</h1>
 <hr>
 
 <p>
@@ -41,6 +42,7 @@
 
 <hr>
 <p id="msg" class="msg">
+The Root Hash for this chatting room is "CS651".
 </p >
 
 <table id="output">
