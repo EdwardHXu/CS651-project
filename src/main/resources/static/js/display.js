@@ -20,9 +20,12 @@ function displayAllAgents(json) {
         return;
     }
     // displayAgent(agents[0]);
-    for (var i in agents)
-        if (agents[i].name === name)
+    for (var i in agents){
+        if (agents[i].name === name){
             displayAgent(agents[i]);
+            break;
+        }
+    }
 }
 
 function displayAgent(jsonAgent) {
