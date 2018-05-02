@@ -18,9 +18,6 @@
     var platformName = navigator.platform;
     var port = 3000 + idx;
     sendHttpRequest("POST", "agent?name=" + name + "&port=" + port, null, displayAgent);
-    if (testMode) {
-        displayAgent('{"name":"Agent1","port":1001,"blockchain":[{"index":2,"creator":"Agent1","timestamp":1502193341671,"hash":"4f99b67b06b6831886815ffe66a55be2e34dcefdfc16b6214710313062a8a480","previousHash":"ROOT_HASH"}]}');
-    }
 </script>
 </h2>
 
